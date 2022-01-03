@@ -25,6 +25,8 @@ final class CourseRepositoryTest extends CoursesModuleInfrastructureTestCase
 
         $this->repository()->save($course);
 
+        $this->clearUnitOfWork();
+
         $this->assertEquals($course, $this->repository()->search($course->id()));
     }
 
